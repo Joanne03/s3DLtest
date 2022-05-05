@@ -1,0 +1,33 @@
+name: CI
+on: push
+jobs:
+  auto-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2 
+        with:
+          lfs: true
+      - name: set up python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+      - name: install and setup pdm
+        run: |
+          pip install pdm
+          pdm config python.use_venv True
+        working-directory: app/
+      - name: create and activate venv
+        run: |
+          python3 -m venv ./.venv
+          source ./.venv/bin/activate
+        working-directory: app/
+      - name: pdm install
+        run: |
+          pdm install -d
+          pdm install -G main
+        working-directory: app/
+      - name: run test
+        run: |
+          pdm run test
+        working-directory: app/

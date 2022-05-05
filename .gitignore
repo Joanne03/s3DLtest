@@ -1,0 +1,8 @@
+.DS_Store
+
+.venv
+__pycache__
+.pytest_cache
+__pypackages__
+.pdm.toml
+.tool-versions

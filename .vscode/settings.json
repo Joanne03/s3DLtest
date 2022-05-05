@@ -1,0 +1,6 @@
+{
+    "python.linting.mypyEnabled": true,
+    "python.envFile": "app/.venv",
+    "python.autoComplete.extraPaths": ["app/.venv/lib/python3.9/site-packages"],
+    "python.analysis.extraPaths": ["app/.venv/lib/python3.9/site-packages"]
+  }
