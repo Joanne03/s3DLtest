@@ -13,7 +13,7 @@ def test_dummyFunction(dummyInput):
 @pytest.fixture
 def s3BucketName():
     return "model-tokenizer-files"
-    
+
 def test_downloadFile(s3BucketName):
-    result = downloadFile
+    result = downloadFile(s3BucketName)
     assert result == "file downloaded!!!!!!"
