@@ -35,6 +35,8 @@ jobs:
           pdm install -G main
         working-directory: app/
       - name: run test
+        env: 
+          BUCKET_NAME: ${{ secrets.S3_UPLOAD_BUCKET }}
         run: |
           pdm run test
         working-directory: app/

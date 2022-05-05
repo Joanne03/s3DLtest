@@ -1,11 +1,13 @@
 import boto3
 import os
+from os import getenv
 
 def dummyFunction(randomInput):
     print("dummyFunctionCalled")
     return "dummy"
 
 def downloadFile(s3_bucket_name):
+
     s3 = boto3.resource("s3")
     tmp_path = "/tmp/"
     file = "tokenizer.json"
