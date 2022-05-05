@@ -28,4 +28,4 @@ requires = ["pdm-pep517"]
 build-backend = "pdm.pep517.api"
 
 [tool.pdm.scripts]
-test = { shell = "pytest tests" }
+test = { shell = "pytest -s tests" }
